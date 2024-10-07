@@ -18,7 +18,7 @@
               };
             };
 	    swap = {  # Dedicated swap partition
-              size = "8GB";
+              size = "20GB"; # Changed from 8 to 20 (just in case)
               content = {
                 type = "swap";
                 resumeDevice = true;
