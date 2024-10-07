@@ -1,1 +1,1 @@
-# nixOs_configs
+# All configs files for nixOS
