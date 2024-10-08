@@ -18,7 +18,7 @@
               };
             };
 	    swap = {  # Dedicated swap partition
-              size = "20GB"; # Changed from 8 to 20 (just in case)
+              size = "20G"; # Changed from 8 to 20 (just in case)
               content = {
                 type = "swap";
                 resumeDevice = true;
@@ -50,7 +50,7 @@
         type = "lvm_vg";
         lvs = {             # Defining logical volumes within the "pool" VG
           root = {
-            size = "50GB";   # Size of the root LV
+            size = "50G";   # Size of the root LV
             content = {
               type = "filesystem";
               format = "btrfs";
@@ -59,7 +59,7 @@
             };
           };
           home = {          # Home directory LV
-            size = "40GB"; 
+            size = "40G"; 
             content = {
               type = "filesystem";
               format = "btrfs";
