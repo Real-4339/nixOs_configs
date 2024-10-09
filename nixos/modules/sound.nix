@@ -14,8 +14,8 @@
 
     jack.enable = true;
     
-	# Bluetooth Configuration
-	bluetooth = {
+    # Bluetooth Configuration
+    bluetooth = {
       enable = true;  # Enables PipeWire's Bluetooth audio support
       a2dp.defaultCodec = "aptx";  # Or "ldac", if needed
     };

@@ -14,8 +14,8 @@
     git
     fastfetch
     htop
-	unzip
-	zip
+    unzip
+    zip
     openssl
 
     # Sound
@@ -30,29 +30,30 @@
     bluez-tools
     bluez-alsa
 
-	# Packages for virtual surround sound (will require configuration)
+    # Packages for virtual surround sound (will require configuration)
     # pulseaudio-modules-bt 
     # paprefs
 
-	# CPU amd
+    # CPU amd
 
     # GPU nvidia 
     # nvidia-vulkan-icd
     # nvidia-opencl-icd
     # glaxnimate
 
-	# Battery
-	tlp
-	xscreensaver
-	brightnessctl # light
-	# hypridle
+    # Battery
+    tlp
+    xscreensaver
+    brightnessctl # light
+    # hypridle
 	
-	# Login Manager
-	xsecurelock
+    # Login Manager
+    xsecurelock
 
     # Other
     home-manager
     # papirus-nord
+
   ];
 
   fonts.packages = with pkgs; [
