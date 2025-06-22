@@ -2,10 +2,10 @@
   description = "My system configuration";
 
   inputs = {
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -14,23 +14,20 @@
 
     let
       system = "x86_64-linux";
-    in {
-
-    # nixos - system hostname
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = {
-          config.allowUnfree = true;
+    in 
+    {
+      # nixos - system hostname
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        specialArgs = { 
+#          config.allowUnfree = true; 
+          inherit inputs system;
         };
-        inherit inputs system;
+        modules = [ ./nixos/configuration.nix ];
       };
-      modules = [
-        ./nixos/configuration.nix
-        ];
-    };
 
-    homeConfigurations.unreal = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
-      modules = [ ./home-manager/home.nix ];
+      homeConfigurations.unreal = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [ ./home-manager/home.nix ];
+      };
     };
-  };
 }
