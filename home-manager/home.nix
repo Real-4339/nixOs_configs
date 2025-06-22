@@ -1,58 +1,66 @@
-{
+{ pkgs, ... }: {
 
   imports = [
-    ./zsh.nix
     ./modules/bundle.nix
   ];
 
-  disabledModules = [
-    ./modules/env.nix
-  ];
+  #disabledModules = [
+  #  ./modules/env.nix
+  #];
+
+  nixpkgs.config.allowUnfree = true;
 
   home = {
     username = "unreal";
     homeDirectory = "/home/unreal";
-    stateVersion = "23.11"; # idk
+    stateVersion = "24.05";
 	
     packages = with pkgs; [
       # Desktop apps
-      telegram-desktop
-      discord
-      obsidian
+      # telegram-desktop
+      # discord
+      # obsidian
       firefox
-      mpv # media player
-      ffmpeg # screen recorder 
+      # mpv # media player
+      # ffmpeg # screen recorder 
       # kdenlive # video editor
       # obs-studio
 
-      # Coding stuff
-
       # CLI utils
       lf
-      kitty
+      acpi
+      neovim
+      kitty # gpu acceleration
+      picom
       keepassxc
-      # zsh
       # yt-dlp # audi/vid youtube downloader
-      # mediainfo
+      mediainfo
       # lazygit
-      # networkmanagerapplet # gui network manager
+      networkmanagerapplet # gui network manager
+
+      # Code Langs
 
       # Xorg stuff
       xclip
       xorg.xbacklight
-	
+      xorg.xmodmap
+      xkb-switch
+
       # WMs and stuff
       awesome
-	  		
+	 		
       # GUI utils
+      ncdu
       vlc
-      feh
+      feh # Opening image in cli
       # imv
-      kdePackages.dolphin
+      xfce.thunar
+      xfce.thunar-volman
+      xfce.tumbler
       gromit-mpx # drawing on screen
-      dunst
-      # mako
-      # dmenu      
+      dunst # X11
+      # mako # Wayland
+      dmenu      
       # screenkey
       
       # Screenshotting
