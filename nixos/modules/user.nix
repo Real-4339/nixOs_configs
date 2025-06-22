@@ -6,7 +6,7 @@
 
     users.unreal = {
       isNormalUser = true;
-      description = "UnReal";
+      description = "unreal";
       extraGroups = [ "networkmanager" "wheel" "input" "libvirtd" ];
       packages = with pkgs; [];
     };
