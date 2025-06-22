@@ -21,14 +21,10 @@
     # Sound
     mpd
     pipewire
-    pipewire-pulse
-    pipewire-bluetooth
-    # pulseaudio
-    # pavucontrol
     pamixer
-    bluez
-    bluez-tools
-    bluez-alsa
+    #bluez
+    #bluez-tools
+    #bluez-alsa
 
     # Packages for virtual surround sound (will require configuration)
     # pulseaudio-modules-bt 
@@ -46,9 +42,6 @@
     xscreensaver
     brightnessctl # light
     # hypridle
-	
-    # Login Manager
-    xsecurelock
 
     # Other
     home-manager
@@ -64,6 +57,6 @@
     font-awesome
     powerline-fonts
     powerline-symbols
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+    nerd-fonts.symbols-only
   ];
 }
