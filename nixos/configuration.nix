@@ -1,0 +1,22 @@
+{ inputs, ...}: {
+  imports = [
+    ./hardware-configuration.nix
+    ./packages.nix
+    ./modules/bundle.nix
+  ];
+
+  #disabledModules = [
+  #];
+
+  networking.hostName = "nixos"; # Define your hostname.
+
+  time.timeZone = "Europe/Bratislava"; # Set your time zone.
+
+  i18n.defaultLocale = "en_US.UTF-8"; # Select internationalisation properties.
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ]; # Enabling flakes
+  
+  nix.settings.trusted-users = [ "unreal" ];
+
+  system.stateVersion = "25.05"; # Don't change it bro
+}
